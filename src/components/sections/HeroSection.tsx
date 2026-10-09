@@ -32,7 +32,7 @@ export function HeroSection({ hasVideo = true }: { hasVideo?: boolean }) {
   };
 
   return (
-    <section className="relative min-h-[100svh] w-full bg-[#0A0A0F] overflow-hidden flex flex-col justify-center pt-24 pb-12 lg:pt-0 lg:pb-8" id="hero">
+    <section className="relative min-h-[100svh] min-[1850px]:min-h-[900px] min-[1850px]:max-h-[900px] w-full bg-[#0A0A0F] overflow-hidden flex flex-col justify-center pt-24 pb-12 lg:pt-0 lg:pb-8" id="hero">
       {/* Background Elements */}
       <div className="absolute inset-0 z-0 pointer-events-none">
         {/* Radial vignette */}
@@ -120,7 +120,7 @@ export function HeroSection({ hasVideo = true }: { hasVideo?: boolean }) {
           {/* Right Column (8-12) - Tilted Cards */}
           <div className="lg:col-span-5 relative h-[500px] lg:h-[450px] xl:h-[650px] hidden md:block perspective-1000 ">
             <h2 className="sr-only">Featured Work</h2>
-            <div className="absolute inset-0 flex items-center justify-center transform-style-3d">
+            <div className="absolute inset-0 flex items-center justify-center transform-style-3d pt-24 lg:pt-48 xl:pt-0">
               {/* Card 1: Al-Shifa (Front) */}
               <motion.div style={{ y: y1 }} className="absolute z-[50]">
                 <motion.div
