@@ -34,9 +34,20 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
     template: "%s | Zain Awan",
-    default: "Zain Awan | AI & Full-Stack Developer",
+    default: "Zain Awan | Full Stack Developer",
   },
-  description: "Portfolio of Zain Awan, specializing in AI-powered applications and full-stack web development.",
+  description:
+    "Portfolio of Zain Awan — Full Stack Developer and AI enthusiast from Pakistan. Building modern web applications with React, Next.js, and AI-powered features.",
+  keywords: [
+    "Zain Awan",
+    "Full Stack Developer",
+    "Next.js Developer",
+    "React Developer",
+    "AI Developer Pakistan",
+    "Portfolio",
+  ],
+  authors: [{ name: "Zain Awan", url: SITE_URL }],
+  creator: "Zain Awan",
   formatDetection: {
     email: false,
     address: false,
@@ -44,6 +55,29 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: "/icon.png",
+  },
+  openGraph: {
+    type: "website",
+    siteName: "Zain Awan | Full Stack Developer",
+    title: "Zain Awan | Full Stack Developer",
+    description:
+      "Portfolio of Zain Awan — Full Stack Developer and AI enthusiast from Pakistan. Building modern web applications with React, Next.js, and AI-powered features.",
+    url: SITE_URL,
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Zain Awan — Full Stack Developer",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Zain Awan | Full Stack Developer",
+    description:
+      "Portfolio of Zain Awan — Full Stack Developer and AI enthusiast from Pakistan. Building modern web applications with React, Next.js, and AI-powered features.",
+    images: ["/opengraph-image"],
   },
   ...(process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION && {
     verification: {

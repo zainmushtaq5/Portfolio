@@ -16,9 +16,10 @@ export function generateStaticParams() {
   }));
 }
 
-export function generateMetadata({ params }: { params: { slug: string } }) {
-  const project = projects.find((p) => p.slug === params.slug);
-  if (!project) return buildMetadata({ title: "Project Not Found", description: "Not found", path: `/projects/${params.slug}` });
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const project = projects.find((p) => p.slug === slug);
+  if (!project) return buildMetadata({ title: "Project Not Found", description: "Not found", path: `/projects/${slug}` });
   
   return buildMetadata({
     title: `${project.title}: Case Study`,
@@ -28,8 +29,9 @@ export function generateMetadata({ params }: { params: { slug: string } }) {
   });
 }
 
-export default function ProjectCaseStudy({ params }: { params: { slug: string } }) {
-  const project = projects.find((p) => p.slug === params.slug);
+export default async function ProjectCaseStudy({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const project = projects.find((p) => p.slug === slug);
   
   if (!project) {
     notFound();
