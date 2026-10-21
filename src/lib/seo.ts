@@ -1,7 +1,13 @@
 import type { Metadata } from "next";
 
 export const SITE_URL = (
-  process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"
+  (process.env.NODE_ENV === "production" &&
+  (!process.env.NEXT_PUBLIC_SITE_URL ||
+    process.env.NEXT_PUBLIC_SITE_URL.includes("localhost")))
+    ? (process.env.VERCEL_PROJECT_PRODUCTION_URL
+        ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+        : "https://portfolio-zain-awan.vercel.app")
+    : (process.env.NEXT_PUBLIC_SITE_URL || "https://portfolio-zain-awan.vercel.app")
 ).replace(/\/$/, "");
 
 export const PERSON_ID = `${SITE_URL}/#person`;
@@ -60,6 +66,7 @@ export function buildMetadata({
 
 type PersonInput = {
   name: string;
+  alternateName?: string;
   jobTitle: string;
   description: string;
   image?: string;
@@ -74,6 +81,7 @@ export function personJsonLd(p: PersonInput) {
     "@type": "Person",
     "@id": PERSON_ID,
     name: p.name,
+    ...(p.alternateName ? { alternateName: p.alternateName } : {}),
     url: SITE_URL,
     jobTitle: p.jobTitle,
     description: p.description,

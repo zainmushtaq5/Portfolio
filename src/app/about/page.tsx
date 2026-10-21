@@ -6,7 +6,7 @@ import { buildMetadata, breadcrumbJsonLd } from "@/lib/seo";
 import { JsonLd } from "@/components/seo/JsonLd";
 
 export const metadata = buildMetadata({
-  title: "About Zain Awan: Deep Learning & Full-Stack Developer",
+  title: "About Me — Background & Journey",
   description: "Learn about my background, education, and career journey in AI-powered deep learning and full-stack web development.",
   path: "/about",
 });

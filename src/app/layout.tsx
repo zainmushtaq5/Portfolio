@@ -79,11 +79,11 @@ export const metadata: Metadata = {
       "Portfolio of Zain Awan — Full Stack Developer and AI enthusiast from Pakistan. Building modern web applications with React, Next.js, and AI-powered features.",
     images: ["/opengraph-image"],
   },
-  ...(process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION && {
-    verification: {
-      google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,
-    },
-  }),
+  verification: {
+    google:
+      process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION ||
+      "Ynja1jLHsrHaKy_9lCr3F29nOZxhWuhDN-d_4gdNvU0",
+  },
 };
 
 export default function RootLayout({

@@ -1,9 +1,10 @@
 const http = require("http");
+const https = require("https");
 const fs = require("fs");
 const path = require("path");
 const cheerio = require("cheerio");
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://portfolio-zain-awan.vercel.app";
 
 const routes = [
   "/",
@@ -15,8 +16,7 @@ const routes = [
   "/projects/text-to-motion",
   "/projects/jarvis-voice-assistant",
   "/projects/pdf-ocr-reader",
-  "/projects/prize-bond-checker-pwa",
-  "/projects/prize-bond-checker",
+  "/projects/bond-checker",
   "/services",
   "/contact",
   "/achievements",
@@ -24,8 +24,9 @@ const routes = [
 ];
 
 async function fetchHtml(route) {
+  const client = BASE_URL.startsWith("https") ? https : http;
   return new Promise((resolve, reject) => {
-    http.get(`${BASE_URL}${route}`, (res) => {
+    client.get(`${BASE_URL}${route}`, (res) => {
       let data = "";
       res.on("data", chunk => data += chunk);
       res.on("end", () => resolve({ status: res.statusCode, html: data }));

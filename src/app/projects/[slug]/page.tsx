@@ -21,9 +21,12 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const project = projects.find((p) => p.slug === slug);
   if (!project) return buildMetadata({ title: "Project Not Found", description: "Not found", path: `/projects/${slug}` });
   
+  const rawDesc = project.description || project.tagline;
+  const description = rawDesc.length > 155 ? `${rawDesc.slice(0, 152).trim()}...` : rawDesc;
+
   return buildMetadata({
-    title: `${project.title}: Case Study`,
-    description: project.tagline,
+    title: project.title,
+    description,
     path: `/projects/${project.slug}`,
     type: "article",
   });

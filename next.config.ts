@@ -23,6 +23,10 @@ const nextConfig: NextConfig = {
             key: "Referrer-Policy",
             value: "strict-origin-when-cross-origin",
           },
+          {
+            key: "X-Robots-Tag",
+            value: "index, follow",
+          },
         ],
       },
       {

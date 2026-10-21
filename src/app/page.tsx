@@ -77,7 +77,8 @@ export default async function Home() {
   return (
     <div className="flex flex-col w-full">
       <JsonLd data={personJsonLd({
-        name: personal.name,
+        name: "Zain Awan",
+        alternateName: personal.name,
         jobTitle: "Full Stack Developer",
         description: personal.bio,
         sameAs: [personal.github, personal.linkedin],

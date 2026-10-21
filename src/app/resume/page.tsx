@@ -7,8 +7,8 @@ import { skillGroups } from "@/data/skills";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata = buildMetadata({
-  title: "Resume",
-  description: "View and download my professional resume.",
+  title: "Resume & Curriculum Vitae",
+  description: "View and download the professional resume of Zain Awan, featuring education, technical skills, projects, and work experience.",
   path: "/resume",
   noindex: true,
 });

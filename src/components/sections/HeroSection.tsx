@@ -87,13 +87,13 @@ export function HeroSection({ hasVideo = true }: { hasVideo?: boolean }) {
             </motion.div>
 
             {/* Headline */}
-            <motion.div variants={item} className="font-display font-bold leading-[1.1] mb-8 lg:mb-5 xl:mb-8">
+            <motion.h1 variants={item} className="font-display font-bold leading-[1.1] mb-8 lg:mb-5 xl:mb-8">
               <span className="block text-3xl md:text-5xl lg:text-5xl xl:text-6xl text-muted-foreground/60 tracking-tight">I BUILD</span>
               <span className="block text-5xl md:text-7xl lg:text-6xl xl:text-[5.5rem] text-transparent tracking-tighter" style={{ WebkitTextStroke: "1px rgba(255,255,255,0.8)" }}>AI-POWERED</span>
               <span className="block text-4xl md:text-6xl lg:text-5xl xl:text-[5rem] tracking-tight text-white mt-2 lg:mt-1 xl:mt-2">
                 WEB <span className="text-primary">PRODUCTS.</span>
               </span>
-            </motion.div>
+            </motion.h1>
 
             {/* Subtitle */}
             <motion.p variants={item} className="text-lg md:text-xl lg:text-base xl:text-xl text-muted-foreground max-w-xl lg:max-w-md xl:max-w-xl mb-10 lg:mb-6 xl:mb-10 font-body leading-relaxed">
