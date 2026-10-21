@@ -1,13 +1,10 @@
 import type { Metadata } from "next";
 
 export const SITE_URL = (
-  (process.env.NODE_ENV === "production" &&
-  (!process.env.NEXT_PUBLIC_SITE_URL ||
-    process.env.NEXT_PUBLIC_SITE_URL.includes("localhost")))
-    ? (process.env.VERCEL_PROJECT_PRODUCTION_URL
-        ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
-        : "https://portfolio-zain-awan.vercel.app")
-    : (process.env.NEXT_PUBLIC_SITE_URL || "https://portfolio-zain-awan.vercel.app")
+  (process.env.NEXT_PUBLIC_SITE_URL &&
+   !process.env.NEXT_PUBLIC_SITE_URL.includes("localhost"))
+    ? process.env.NEXT_PUBLIC_SITE_URL
+    : "https://portfolio-zain-awan.vercel.app"
 ).replace(/\/$/, "");
 
 export const PERSON_ID = `${SITE_URL}/#person`;
