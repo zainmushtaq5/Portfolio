@@ -2,18 +2,27 @@ import { personal, stats } from "@/data/personal";
 import { achievements } from "@/data/achievements";
 import { FileText, ArrowRight, Briefcase, GraduationCap } from "lucide-react";
 import Link from "next/link";
-import { buildMetadata, breadcrumbJsonLd } from "@/lib/seo";
+import { buildMetadata, breadcrumbJsonLd, personJsonLd } from "@/lib/seo";
 import { JsonLd } from "@/components/seo/JsonLd";
 
 export const metadata = buildMetadata({
-  title: "About Me — Background & Journey",
-  description: "Learn about my background, education, and career journey in AI-powered deep learning and full-stack web development.",
+  title: "About Zain Awan — Full Stack Developer & AI Engineer",
+  description: "Learn about Zain Awan — Full Stack Developer and AI Engineer from Pakistan. Specializing in Next.js, React, Python, TensorFlow, and AI-powered applications.",
   path: "/about",
 });
 
 export default function AboutPage() {
   return (
     <div className="min-h-screen bg-background pb-24">
+      <JsonLd data={personJsonLd({
+        name: "Zain Awan",
+        alternateName: "Zain Mushtaq",
+        jobTitle: "Full Stack Developer & AI Engineer",
+        description: personal.bio,
+        sameAs: [personal.github, personal.linkedin],
+        knowsAbout: ["Full Stack Development", "React", "Next.js", "TypeScript", "Python", "AI", "Deep Learning", "TensorFlow"],
+        alumniOf: personal.education.university,
+      })} />
       <JsonLd data={breadcrumbJsonLd([
         { name: "Home", path: "/" },
         { name: "About", path: "/about" }

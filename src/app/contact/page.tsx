@@ -3,8 +3,8 @@ import { buildMetadata, breadcrumbJsonLd } from "@/lib/seo";
 import { JsonLd } from "@/components/seo/JsonLd";
 
 export const metadata = buildMetadata({
-  title: "Contact & Hire — Let's Work Together",
-  description: "Get in touch to hire Zain Awan for your next AI integration, chatbot, or full-stack web development project.",
+  title: "Contact & Hire Zain Awan — Let's Work Together",
+  description: "Get in touch with Zain Awan — Full Stack Developer and AI Engineer from Pakistan. Available for freelance projects, remote work, and junior engineering roles worldwide.",
   path: "/contact",
 });
 

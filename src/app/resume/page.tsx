@@ -7,10 +7,10 @@ import { skillGroups } from "@/data/skills";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata = buildMetadata({
-  title: "Resume & Curriculum Vitae",
-  description: "View and download the professional resume of Zain Awan, featuring education, technical skills, projects, and work experience.",
+  title: "Resume — Zain Awan | Full Stack & AI Developer",
+  description: "View and download the professional resume of Zain Awan — Full Stack Developer and AI Engineer from Pakistan, featuring skills in Next.js, React, Python, TensorFlow, and AI development.",
   path: "/resume",
-  noindex: true,
+  noindex: false,
 });
 
 export default function ResumePage() {

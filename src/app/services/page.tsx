@@ -4,7 +4,7 @@ import { JsonLd } from "@/components/seo/JsonLd";
 
 export const metadata = buildMetadata({
   title: "Services — Full-Stack & AI Solutions",
-  description: "I offer full-stack web development and AI integration services, including custom AI chatbots, deep learning pipelines, and responsive web applications.",
+  description: "Zain Awan offers Full Stack Web Development, AI Integration, Deep Learning model deployment, and custom chatbot development for startups and businesses in Pakistan and worldwide.",
   path: "/services",
 });
 

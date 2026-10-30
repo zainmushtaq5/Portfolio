@@ -6,8 +6,8 @@ import { buildMetadata, breadcrumbJsonLd } from "@/lib/seo";
 import { JsonLd } from "@/components/seo/JsonLd";
 
 export const metadata = buildMetadata({
-  title: "Projects: AI Chatbots, Deep Learning & Web Apps",
-  description: "A complete list of my work, ranging from deep learning models to AI-powered web applications and tools.",
+  title: "Projects — AI Chatbots, Deep Learning & Web Apps",
+  description: "Explore Zain Awan's portfolio of AI and web development projects — plant disease detection CNN, hospital appointment chatbot, text-to-motion AI, and full-stack web apps built with Next.js and Python.",
   path: "/projects",
 });
 
